@@ -52,7 +52,3 @@ Once the dependencies are installed, you can run the utility in the background.
 ## Backend Status
 
 Please be aware that the backend server (API and storage) for this project is currently under development. The utility in this version is configured to send data to a dummy API endpoint for testing purposes. Real-time data display and historical data will be available once the backend is complete.
-
----
-
-Thank you for testing the System Health Utility!
