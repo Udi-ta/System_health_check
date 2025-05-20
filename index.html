@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Health Dashboard Utility</title>
+    <style>
+        body { font-family: sans-serif; margin: 80px; }
+        h1 { text-align: center; }
+        .popup-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            display: none; /* Hidden by default */
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 80%;
+            max-height: 80%;
+            overflow-y: auto;
+            position: relative;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 1.2em;
+            color: #555;
+        }
+        .instructions-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 20px auto;
+            position: absolute;
+            top: 165px;
+            right: 686px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .download-button {
+            position: absolute;
+            top: 230px;
+            right: 670px;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+        }
+        .dashboard-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #6c757d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>System Health Utility</h1>
+
+    <a href="./dashboard.html" class="dashboard-link">Dashboard</a>
+
+    <a href="#" class="instructions-button" onclick="openInstructions()">View Instructions</a>
+
+    <a href="https://drive.google.com/uc?export=download&id=1jBK6s_T_M0u2IYRKu7IHj_8a_JKpseD9" class="download-button">Download Utility (ZIP)</a>
+
+<div id="instructions-popup" class="popup-container">
+    <div class="popup-content">
+        <span class="close-button" onclick="closeInstructions()">&times;</span>
+        <h2>Installation and Usage Instructions</h2>
+        <div id="instructions-text">
+            <h3>Prerequisites</h3>
+            <ul>
+                <li><strong>Python 3:</strong> Ensure you have Python 3 installed. Download from <a href="https://www.python.org/downloads/">official Python website</a>.</li>
+                <li><strong>pip:</strong> Pip should come with Python. Check by running <code>pip --version</code> in your terminal.</li>
+            </ul>
+
+            <h3>Installation (Running from Source)</h3>
+            <ol>
+                <li><strong>Download and Extract:</strong> Download the <code>system-health-utility.zip</code> and extract it.</li>
+                <li><strong>Install Dependencies:</strong> Open your terminal/command prompt, navigate to the extracted <code>system-health-utility</code> folder, and run:
+                    <pre><code>pip install -r requirements.txt</code></pre>
+                    (Ensure <code>requirements.txt</code> in the zip contains: <code>psutil</code>, <code>schedule</code>, <code>requests</code>)
+                </li>
+            </ol>
+
+            <h3>Configuration (Dummy API)</h3>
+            <p>This version uses a dummy API. You do not need to configure <code>api_endpoint</code> in <code>config.ini</code>. You can adjust <code>reporting_interval_minutes</code>.</p>
+
+            <h3>Running the Utility in the Background</h3>
+            <h4>macOS/Linux:</h4>
+            <pre><code>nohup python main.py &</code></pre>
+            <p>Check with <code>ps aux | grep "python main.py"</code> and stop with <code>kill &lt;PID&gt;</code>.</p>
+            <h4>Windows:</h4>
+            <pre><code>start python main.py</code></pre>
+            <p>Stop via Task Manager.</p>
+
+            <h3>Accessing the Dashboard</h3>
+            <p>Go to <a href="./dashboard.html">Dashboard</a> after the utility is running.</p>
+
+            <h3>Backend Status</h3>
+            <p>Backend is under development. This version uses a dummy API.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openInstructions() {
+        document.getElementById('instructions-popup').style.display = 'flex';
+    }
+
+    function closeInstructions() {
+        document.getElementById('instructions-popup').style.display = 'none';
+    }
+</script>
+</body>
+</html>

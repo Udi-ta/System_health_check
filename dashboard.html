@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Health Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>System Health Dashboard</h1>
+    <h2 id="machine-id" style="text-align: center; margin-bottom: 15px;"></h2>
+    <div id="filters">
+        <label for="status-filter">Filter by Status:</label>
+        <select id="status-filter">
+            <option value="">All</option>
+            <option value="issue">Issues Found</option>
+            <option value="ok">OK</option>
+            <option value="unknown">Unknown</option>
+        </select>
+        <label for="inactivity-filter">Filter by Inactivity:</label>
+        <select id="inactivity-filter">
+            <option value="">All</option>
+            <option value="OK">OK</option>
+            <option value="Too long (20 mins)">Too long (20 mins)</option>
+            <option value="Too long (15 mins)">Too long (15 mins)</option>
+            <option value="Checking sleep settings...">Checking sleep settings...</option>
+            <option value="Unknown">Unknown</option>
+        </select>
+    </div>
+    <table id="machines-table">
+        <thead>
+            <tr>
+                <th>Machine ID</th>
+                <th>OS</th>
+                <th>Disk Encrypted</th>
+                <th>OS Updates</th>
+                <th>Antivirus</th>
+                <th>Inactivity Sleep</th>
+                <th>Last Check-in</th>
+            </tr>
+        </thead>
+        <tbody id="machines-data">
+            </tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>

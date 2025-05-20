@@ -1,0 +1,43 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#filters {
+    margin-bottom: 15px;
+}
+
+#filters label, #filters select {
+    margin-right: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.issue {
+    background-color: #ffe0e0;
+}
+
+.ok {
+    background-color: #e0ffe0;
+}
+
+.unknown {
+    background-color: #f0f0f0;
+}
